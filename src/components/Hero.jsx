@@ -1,47 +1,39 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// Curated Indian cultural wedding photos matching the rituals mentioned
+// Curated Indian wedding/event visuals (no fitness/bodybuilder imagery)
 const heroImages = [
   {
-    title: 'Mehndi Ceremony',
-    src: 'https://images.unsplash.com/photo-1605296867724-fa87a8ef53fd?q=80&w=2100&auto=format&fit=crop',
+    title: 'Bridal Mehndi Detail',
+    src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2100&auto=format&fit=crop',
   },
   {
     title: 'Haldi Ritual',
-    src: 'https://images.unsplash.com/photo-1684813910513-11e6b30adc22?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxNZWhuZGklMjBDZXJlbW9ueXxlbnwwfDB8fHwxNzYzODAxMjk2fDA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+    src: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=2100&auto=format&fit=crop',
   },
   {
     title: 'Sangeet Night',
     src: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2100&auto=format&fit=crop',
   },
   {
-    title: 'Baraat',
+    title: 'Mandap Décor',
     src: 'https://images.unsplash.com/photo-1752718315661-20e1472d91b3?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxTYW5nZWV0JTIwTmlnaHR8ZW58MHwwfHx8MTc2MzgwMTI5N3ww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
   },
   {
-    title: 'Pheras (Vows)',
+    title: 'Wedding Rings',
     src: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2100&auto=format&fit=crop',
-  },
-  {
-    title: 'Jaimala Exchange',
-    src: 'https://images.unsplash.com/photo-1519741499535-922d19b5be89?q=80&w=2100&auto=format&fit=crop',
-  },
-  {
-    title: 'Mandap Décor',
-    src: 'https://images.unsplash.com/photo-1533145862815-f4059758ae5f?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxKYWltYWxhJTIwRXhjaGFuZ2V8ZW58MHwwfHx8MTc2MzgwMTI5OHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
   },
   {
     title: 'Reception Elegance',
     src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2100&auto=format&fit=crop',
   },
   {
-    title: 'Bridal Detail',
+    title: 'Baraat',
     src: 'https://images.unsplash.com/photo-1759038085950-1234ca8f5fed?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxSZWNlcHRpb24lMjBFbGVnYW5jZXxlbnwwfDB8fHwxNzYzODAxMjk4fDA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
   },
   {
     title: 'Couple Portrait',
-    src: 'https://images.unsplash.com/photo-1631687688319-ffd10d7e530b?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkYWwlMjBEZXRhaWx8ZW58MHwwfHx8MTc2MzgwMTI5OXww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+    src: 'https://images.unsplash.com/photo-1724857457998-d5fb74cf6a06?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCYXJhYXR8ZW58MHwwfHx8MTc2MzgwNDIwMHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
   },
 ]
 

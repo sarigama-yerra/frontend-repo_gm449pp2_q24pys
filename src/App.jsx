@@ -8,8 +8,8 @@ import About from './components/About'
 import Contact from './components/Contact'
 
 function App() {
-  const igHandle = import.meta.env.VITE_INSTAGRAM_HANDLE || ''
-  const instagramUrl = igHandle ? `https://instagram.com/${igHandle.replace('@','')}` : 'https://instagram.com/'
+  // Use the exact Instagram link provided by the client everywhere on the site
+  const instagramUrl = 'https://www.instagram.com/jp_creation_official_?igsh=MXFwcDJ5ZzdvM3dpdg=='
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -18,9 +18,11 @@ function App() {
         <Hero />
         <Services />
         <Portfolio />
+        {/* Move Contact above Reviews as requested */}
+        <Contact />
+        {/* Place Reviews at the bottom (before footer) */}
         <Reviews />
         <About />
-        <Contact />
         <footer className="border-t border-white/10 bg-[#0b0b0b]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">

@@ -18,7 +18,7 @@ const Navbar = ({ instagramUrl }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#home" className="flex items-center gap-3">
-            <img src="/jp-logo.svg" alt="JP Creation" className="h-9 w-9 object-contain"/>
+            <span className="h-9 w-9 grid place-items-center rounded-full bg-white/10 text-white font-bold text-lg tracking-widest border border-white/15">JP</span>
             <span className="text-lg sm:text-xl font-semibold tracking-wide text-white">
               JP Creation
             </span>
@@ -52,7 +52,7 @@ const Navbar = ({ instagramUrl }) => {
         {open && (
           <div className="md:hidden pb-4 space-y-2">
             {navItems.map((n) => (
-              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-white/85 hover:bg-white/10">
+              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-white/85 hover:bg.white/10 hover:bg-white/10">
                 {n.label}
               </a>
             ))}
