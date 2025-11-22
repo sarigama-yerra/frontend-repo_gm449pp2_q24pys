@@ -3,17 +3,22 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Portfolio from './components/Portfolio'
+import Reviews from './components/Reviews'
 import About from './components/About'
 import Contact from './components/Contact'
 
 function App() {
+  const igHandle = import.meta.env.VITE_INSTAGRAM_HANDLE || ''
+  const instagramUrl = igHandle ? `https://instagram.com/${igHandle.replace('@','')}` : 'https://instagram.com/'
+
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navbar />
+      <Navbar instagramUrl={instagramUrl} />
       <main className="pt-16">
         <Hero />
         <Services />
         <Portfolio />
+        <Reviews />
         <About />
         <Contact />
         <footer className="border-t border-white/10 bg-[#0b0b0b]">
@@ -27,6 +32,7 @@ function App() {
               <nav className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/70">
                 <a href="#services" className="hover:text-white transition-colors">Services</a>
                 <a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a>
+                <a href="#reviews" className="hover:text-white transition-colors">Reviews</a>
                 <a href="#about" className="hover:text-white transition-colors">About</a>
                 <a href="#contact" className="hover:text-white transition-colors">Contact</a>
 
@@ -52,7 +58,7 @@ function App() {
 
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com/"
+                  href={instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-white/80 hover:text-white hover:border-white/20 transition-colors"
@@ -76,7 +82,7 @@ function App() {
 
               <div className="flex items-center gap-3">
                 <a
-                  href="https://instagram.com/"
+                  href={instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm text-white/80 hover:text-white transition"
