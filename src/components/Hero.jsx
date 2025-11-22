@@ -1,27 +1,28 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// Only full-body Indian wedding couple imagery (head-to-toe), minimal cropping via object-contain
+// Luxury Indian wedding décor only (no people). Focus: haldi marigolds, red-rose stage, golden mandap,
+// candle-lit reception tables, and high-end wedding setups. Images displayed with object-contain to avoid cropping.
 const heroImages = [
   {
-    title: 'Bride + Groom Standing (Full-Body)',
-    src: 'https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&auto=format&fit=max&w=2400',
+    title: 'Haldi Marigold Backdrop',
+    src: 'https://images.unsplash.com/photo-1724018823034-01004b16455d?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxIYWxkaSUyME1hcmlnb2xkJTIwQmFja2Ryb3B8ZW58MHwwfHx8MTc2MzgwNzIwM3ww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
   },
   {
-    title: 'Bride Solo Full-Body',
-    src: 'https://images.unsplash.com/photo-1627364155535-9ed50e63aece?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkZSUyMCUyQiUyMEdyb29tJTIwU3RhbmRpbmd8ZW58MHwwfHx8MTc2MzgwNjkyNHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+    title: 'Royal Red-Rose Stage Décor',
+    src: 'https://images.unsplash.com/photo-1490623970972-ae8bb3da443e?q=80&auto=format&fit=max&w=2400',
   },
   {
-    title: 'Groom Solo Full-Body',
-    src: 'https://images.unsplash.com/photo-1644292204200-627c50d4557a?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkZSUyMFNvbG8lMjBGdWxsLUJvZHl8ZW58MHwwfHx8MTc2MzgwNjkyNXww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+    title: 'Golden Mandap Design',
+    src: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&auto=format&fit=max&w=2400',
   },
   {
-    title: 'Sangeet Dance Full-Body',
-    src: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&auto=format&fit=max&w=2400',
+    title: 'Candle‑Lit Reception Tables',
+    src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&auto=format&fit=max&w=2400',
   },
   {
-    title: 'Candid Walking Couple (Full-Body)',
-    src: 'https://images.unsplash.com/photo-1643283162742-40c6f4751676?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxTYW5nZWV0JTIwRGFuY2UlMjBGdWxsLUJvZHl8ZW58MHwwfHx8MTc2MzgwNjkyNXww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+    title: 'High‑End Wedding Setup',
+    src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&auto=format&fit=max&w=2400',
   },
 ]
 
@@ -47,7 +48,7 @@ const Hero = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
             className="w-full h-full flex items-center justify-center"
-          >
+         >
             <img
               src={heroImages[index].src}
               alt={heroImages[index].title}
@@ -56,7 +57,7 @@ const Hero = () => {
           </motion.div>
         </AnimatePresence>
         <div className="absolute inset-0 bg-black/60" />
-        {/* Bottom-left label for current ritual */}
+        {/* Bottom-left label for current décor */}
         <div className="absolute left-4 bottom-4">
           <span className="inline-flex items-center rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs sm:text-sm text-white border border-white/20 shadow-sm">
             {heroImages[index].title}
