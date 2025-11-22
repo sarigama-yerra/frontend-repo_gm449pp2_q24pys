@@ -1,39 +1,27 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// Curated Indian wedding/event visuals (no fitness/bodybuilder imagery)
+// Only full-body Indian wedding couple imagery (head-to-toe), minimal cropping via object-contain
 const heroImages = [
   {
-    title: 'Bridal Mehndi Detail',
-    src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2100&auto=format&fit=crop',
+    title: 'Bride + Groom Standing (Full-Body)',
+    src: 'https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&auto=format&fit=max&w=2400',
   },
   {
-    title: 'Haldi Ritual',
-    src: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=2100&auto=format&fit=crop',
+    title: 'Bride Solo Full-Body',
+    src: 'https://images.unsplash.com/photo-1627364155535-9ed50e63aece?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkZSUyMCUyQiUyMEdyb29tJTIwU3RhbmRpbmd8ZW58MHwwfHx8MTc2MzgwNjkyNHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
   },
   {
-    title: 'Sangeet Night',
-    src: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2100&auto=format&fit=crop',
+    title: 'Groom Solo Full-Body',
+    src: 'https://images.unsplash.com/photo-1644292204200-627c50d4557a?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkZSUyMFNvbG8lMjBGdWxsLUJvZHl8ZW58MHwwfHx8MTc2MzgwNjkyNXww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
   },
   {
-    title: 'Mandap Décor',
-    src: 'https://images.unsplash.com/photo-1752718315661-20e1472d91b3?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxTYW5nZWV0JTIwTmlnaHR8ZW58MHwwfHx8MTc2MzgwMTI5N3ww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+    title: 'Sangeet Dance Full-Body',
+    src: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&auto=format&fit=max&w=2400',
   },
   {
-    title: 'Wedding Rings',
-    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2100&auto=format&fit=crop',
-  },
-  {
-    title: 'Reception Elegance',
-    src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2100&auto=format&fit=crop',
-  },
-  {
-    title: 'Baraat',
-    src: 'https://images.unsplash.com/photo-1759038085950-1234ca8f5fed?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxSZWNlcHRpb24lMjBFbGVnYW5jZXxlbnwwfDB8fHwxNzYzODAxMjk4fDA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
-  },
-  {
-    title: 'Couple Portrait',
-    src: 'https://images.unsplash.com/photo-1724857457998-d5fb74cf6a06?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCYXJhYXR8ZW58MHwwfHx8MTc2MzgwNDIwMHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+    title: 'Candid Walking Couple (Full-Body)',
+    src: 'https://images.unsplash.com/photo-1643283162742-40c6f4751676?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxTYW5nZWV0JTIwRGFuY2UlMjBGdWxsLUJvZHl8ZW58MHwwfHx8MTc2MzgwNjkyNXww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
   },
 ]
 
@@ -49,19 +37,23 @@ const Hero = () => {
   }, [])
 
   return (
-    <section id="home" className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
-          <motion.img
+          <motion.div
             key={heroImages[index].src}
-            src={heroImages[index].src}
-            alt={heroImages[index].title}
-            className="w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1.1 }}
-            exit={{ opacity: 0.2, scale: 1.06 }}
-            transition={{ duration: 1.2, ease: 'easeOut' }}
-          />
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="w-full h-full flex items-center justify-center"
+          >
+            <img
+              src={heroImages[index].src}
+              alt={heroImages[index].title}
+              className="max-h-full w-auto object-contain"
+            />
+          </motion.div>
         </AnimatePresence>
         <div className="absolute inset-0 bg-black/60" />
         {/* Bottom-left label for current ritual */}

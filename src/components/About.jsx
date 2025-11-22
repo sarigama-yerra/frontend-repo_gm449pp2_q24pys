@@ -2,86 +2,87 @@ import { motion } from 'framer-motion'
 
 const INSTAGRAM_URL = 'https://www.instagram.com/jp_creation_official_?igsh=MXFwcDJ5ZzdvM3dpdg=='
 
+// Strictly full-body selections, minimal cropping with object-contain
 const items = [
   {
-    title: 'Couple Portrait',
+    title: 'Bride + Groom Standing',
     subtitle: 'Traditional Indian attire',
     desc:
-      'Timeless portraits that honor heritage and style — regal silhouettes, handcrafted textiles, and intimate chemistry captured with grace.',
+      'Elegant, head-to-toe portraits celebrating attire, posture, and presence — classic framing with refined light.',
     img:
-      'https://images.unsplash.com/photo-1618291526018-cac5400e1a54?q=80&w=2069&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    title: 'Baraat Procession',
-    subtitle: 'Arrival in celebration',
+    title: 'Bride Solo Portrait',
+    subtitle: 'Full-body bridal elegance',
     desc:
-      'Energy, music, and movement — we frame the groom’s grand arrival with family, friends, and traditional rhythms.',
+      'Graceful silhouettes, flowing lehengas, and heirloom jewelry — the bride’s full look, captured with poise.',
     img:
-      'https://images.unsplash.com/photo-1520975605364-81142b7af0c5?q=80&w=2069&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1519741499535-922d19b5be89?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    title: 'Mandap Decoration',
-    subtitle: 'Sacred space design',
+    title: 'Groom Solo Portrait',
+    subtitle: 'Full-body sherwani look',
     desc:
-      'An elegant mandap sets the tone — florals, fabrics, and lighting curated to reflect your family traditions.',
+      'Regal stance and tailored details — a composed, full-length portrait honoring tradition and style.',
     img:
-      'https://images.unsplash.com/photo-1547887538-047f8148875d?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1520975682031-e9b5f1d8b3a6?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    title: 'Sangeet Night',
-    subtitle: 'Music, dance, joy',
+    title: 'Haldi Ceremony',
+    subtitle: 'Full-body, yellow theme',
     desc:
-      'A vibrant evening of choreography and candid laughter — we preserve the sparkle, movement, and color.',
+      'Joyful, sunlit frames — marigolds, turmeric, and laughter in a candid, head-to-toe composition.',
     img:
-      'https://images.unsplash.com/photo-1519741499535-922d19b5be89?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1605758265312-30a1f1f8432e?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    title: 'Haldi Ritual',
-    subtitle: 'Yellow theme',
+    title: 'Sangeet Dance',
+    subtitle: 'Full-body dance moments',
     desc:
-      'Turmeric, marigolds, and golden light — pure emotion in a palette of sunny hues.',
+      'Rhythm and movement preserved in wide, un-cropped frames — color, energy, and celebration.',
     img:
-      'https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    title: 'Varmala / Jaimala Exchange',
-    subtitle: 'Garlands and promises',
+    title: 'Varmala Exchange',
+    subtitle: 'Full-body garland ceremony',
     desc:
-      'A tender exchange of warmth and respect — captured with elegant framing and soft tones.',
+      'A timeless exchange of garlands — elegant perspective ensuring both partners are framed head-to-toe.',
     img:
-      'https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1545153996-0e2b45a0b06a?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    title: 'Pheras Around Agni',
-    subtitle: 'Close shots',
+    title: 'Mandap Pheras',
+    subtitle: 'Full-body around agni',
     desc:
-      'The sacred fire as witness — intimate close-ups of vows, rituals, and blessings.',
+      'Sacred vows in complete view — the couple and mandap fully framed with reverent composition.',
     img:
-      'https://images.unsplash.com/photo-1508186225823-0963cf9ab0de?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1508186225823-0963cf9ab0de?q=80&w=2000&auto=format&fit=crop',
   },
   {
-    title: 'Bridal Mehndi',
-    subtitle: 'Hands & Feet',
+    title: 'Candid Walking',
+    subtitle: 'Full-body couple moment',
     desc:
-      'Intricate henna patterns, heirloom jewelry, and delicate textures — every detail in refined focus.',
+      'Natural steps, shared glances — a cinematic stroll beautifully centered to keep the look intact.',
     img:
-      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1520975605364-81142b7af0c5?q=80&w=2000&auto=format&fit=crop',
   },
   {
     title: 'Bridal Entry',
-    subtitle: 'A royal arrival',
+    subtitle: 'Full-body royal arrival',
     desc:
-      'An unforgettable walk framed by family and tradition — soft light, gentle motion, and heartfelt smiles.',
+      'Elevated entrance with family — a wide, head-to-toe frame capturing grace and anticipation.',
     img:
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2069&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2000&auto=format&fit=crop',
   },
   {
     title: 'Vidaai Farewell',
-    subtitle: 'Emotional moment',
+    subtitle: 'Full-body emotional send-off',
     desc:
-      'Tears, embraces, and blessings — we document the tenderness of new beginnings with sensitivity.',
+      'Tender goodbyes in a complete frame — emotion, attire, and setting honored without cropping.',
     img:
-      'https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=2000&auto=format&fit=crop',
   },
 ]
 
@@ -119,13 +120,15 @@ const About = () => {
             >
               {/* Photo on left */}
               <div className="relative order-1 md:order-1">
-                <img
-                  src={it.img}
-                  alt={`${it.title} — ${it.subtitle}`}
-                  className="w-full h-72 sm:h-80 lg:h-96 object-cover rounded-xl shadow-2xl"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 rounded-xl ring-1 ring-yellow-500/20" />
+                <div className="w-full h-[28rem] sm:h-[32rem] bg-black/60 rounded-xl flex items-center justify-center overflow-hidden shadow-2xl">
+                  <img
+                    src={it.img}
+                    alt={`${it.title} — ${it.subtitle}`}
+                    className="max-h-full w-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute inset-0 rounded-xl ring-1 ring-yellow-500/20 pointer-events-none" />
               </div>
 
               {/* Description on right */}

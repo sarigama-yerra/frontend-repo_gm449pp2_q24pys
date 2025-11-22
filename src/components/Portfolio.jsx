@@ -1,68 +1,18 @@
 import { useEffect, useRef } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 
-// Curated gallery: explicit Indian wedding/event themes requested
+// Portfolio: strictly full-body Indian wedding couples or solo, head-to-toe
 const gallery = [
-  {
-    title: 'Baraat Procession',
-    src:
-      'https://images.unsplash.com/photo-1545153996-0e2b45a0b06a?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Couple Portfolio',
-    src:
-      'https://images.unsplash.com/photo-1520975682031-e9b5f1d8b3a6?q=80&w=2069&auto=format&fit=crop',
-  },
-  {
-    title: 'Mandap Decoration',
-    src:
-      'https://images.unsplash.com/photo-1547887538-047f8148875d?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Sangeet Night',
-    src:
-      'https://images.unsplash.com/photo-1519741499535-922d19b5be89?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Stage Decor',
-    src:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Cultural Details: Kalire & Chooda',
-    src:
-      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Haldi Ritual',
-    src:
-      'https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Bridal Mehndi',
-    src:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Varmala (Jaimala) Exchange',
-    src:
-      'https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Pheras Around Agni',
-    src:
-      'https://images.unsplash.com/photo-1508186225823-0963cf9ab0de?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Bridal Entry',
-    src:
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2069&auto=format&fit=crop',
-  },
-  {
-    title: 'Vidai Farewell',
-    src:
-      'https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=2070&auto=format&fit=crop',
-  },
+  { title: 'Bride + Groom Standing (Full-Body)', src: 'https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&auto=format&fit=max&w=2000' },
+  { title: 'Bride Solo Full-Body', src: 'https://images.unsplash.com/photo-1627364155535-9ed50e63aece?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkZSUyMCUyQiUyMEdyb29tJTIwU3RhbmRpbmd8ZW58MHwwfHx8MTc2MzgwNjkyNHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80' },
+  { title: 'Groom Solo Full-Body', src: 'https://images.unsplash.com/photo-1627364155535-9ed50e63aece?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkZSUyMCUyQiUyMEdyb29tJTIwU3RhbmRpbmd8ZW58MHwwfHx8MTc2MzgwNjkyNHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80' },
+  { title: 'Haldi Ceremony Full-Body', src: 'https://images.unsplash.com/photo-1627364155535-9ed50e63aece?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkZSUyMCUyQiUyMEdyb29tJTIwU3RhbmRpbmd8ZW58MHwwfHx8MTc2MzgwNjkyNHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80' },
+  { title: 'Sangeet Dance Full-Body', src: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&auto=format&fit=max&w=2000' },
+  { title: 'Varmala Exchange Full-Body', src: 'https://images.unsplash.com/photo-1627364155535-9ed50e63aece?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxCcmlkZSUyMCUyQiUyMEdyb29tJTIwU3RhbmRpbmd8ZW58MHwwfHx8MTc2MzgwNjkyNHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80' },
+  { title: 'Mandap Pheras Full-Body', src: 'https://images.unsplash.com/photo-1508186225823-0963cf9ab0de?q=80&auto=format&fit=max&w=2000' },
+  { title: 'Candid Walking Couple Full-Body', src: 'https://images.unsplash.com/photo-1745270008562-318fb7dbfe1a?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxHcm9vbSUyMFNvbG8lMjBGdWxsLUJvZHl8ZW58MHwwfHx8MTc2MzgwNjkyNnww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80' },
+  { title: 'Bridal Entry Full-Body', src: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&auto=format&fit=max&w=2000' },
+  { title: 'Vidaai Full-Body', src: 'https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&auto=format&fit=max&w=2000' },
 ]
 
 const INSTAGRAM_URL = 'https://www.instagram.com/jp_creation_official_?igsh=MXFwcDJ5ZzdvM3dpdg=='
@@ -82,7 +32,7 @@ const Portfolio = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Portfolio</h2>
           <p className="mt-3 text-white/70 max-w-2xl mx-auto">
-            Rituals to reception — a curated glimpse of Indian wedding moments we bring to life.
+            Head-to-toe frames only — elegant, culturally-rooted moments across the wedding journey.
           </p>
         </div>
         <motion.div
@@ -99,12 +49,12 @@ const Portfolio = () => {
             <motion.figure
               key={i}
               variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-              className="relative overflow-hidden rounded-xl group"
+              className="relative overflow-hidden rounded-xl group bg-black flex items-center justify-center"
             >
               <img
                 src={item.src}
                 alt={item.title}
-                className="w-full h-64 object-cover transition duration-700 group-hover:scale-105"
+                className="max-h-80 w-auto object-contain transition duration-700 group-hover:scale-[1.02]"
                 loading="lazy"
               />
               {/* gradient overlay */}
