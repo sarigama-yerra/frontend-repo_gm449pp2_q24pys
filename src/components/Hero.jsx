@@ -5,9 +5,10 @@ const Hero = () => {
     <section id="home" className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2070&auto=format&fit=crop"
-          alt="Luxury Wedding Decor"
-          className="w-full h-full object-cover scale-105"
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2100&auto=format&fit=crop"
+          alt="Indian Wedding Pheras under Mandap"
+          className="w-full h-full object-cover"
+          style={{ animation: 'slowZoom 22s ease-in-out infinite alternate' }}
         />
         <div className="absolute inset-0 bg-black/60" />
       </div>
@@ -53,6 +54,10 @@ const Hero = () => {
           0% { box-shadow: 0 0 0 0 rgba(234,179,8,0.6); }
           70% { box-shadow: 0 0 0 18px rgba(234,179,8,0); }
           100% { box-shadow: 0 0 0 0 rgba(234,179,8,0); }
+        }
+        @keyframes slowZoom {
+          0% { transform: scale(1.04); }
+          100% { transform: scale(1.1); }
         }
       `}</style>
     </section>
