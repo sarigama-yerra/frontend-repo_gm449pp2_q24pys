@@ -1,10 +1,35 @@
 import { useEffect, useRef } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 
-// Curated gallery: elegant Indian wedding/event visuals (no fitness/bodybuilder imagery)
+// Curated gallery: explicit Indian wedding/event themes requested
 const gallery = [
   {
-    title: 'Bridal Mehndi Detail',
+    title: 'Baraat Procession',
+    src:
+      'https://images.unsplash.com/photo-1545153996-0e2b45a0b06a?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Couple Portfolio',
+    src:
+      'https://images.unsplash.com/photo-1520975682031-e9b5f1d8b3a6?q=80&w=2069&auto=format&fit=crop',
+  },
+  {
+    title: 'Mandap Decoration',
+    src:
+      'https://images.unsplash.com/photo-1547887538-047f8148875d?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Sangeet Night',
+    src:
+      'https://images.unsplash.com/photo-1519741499535-922d19b5be89?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Stage Decor',
+    src:
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Cultural Details: Kalire & Chooda',
     src:
       'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2070&auto=format&fit=crop',
   },
@@ -14,54 +39,29 @@ const gallery = [
       'https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=2070&auto=format&fit=crop',
   },
   {
-    title: 'Sangeet Night',
-    src:
-      'https://images.unsplash.com/photo-1519741499535-922d19b5be89?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Mandap Décor',
-    src:
-      'https://images.unsplash.com/photo-1545153996-0e2b45a0b06a?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Wedding Rings',
+    title: 'Bridal Mehndi',
     src:
       'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
   },
   {
-    title: 'Floral Details',
-    src:
-      'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Reception Elegance',
-    src:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Table Setting',
-    src:
-      'https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Baraat',
-    src:
-      'https://images.unsplash.com/photo-1520975605364-81142b7af0c5?q=80&w=2069&auto=format&fit=crop',
-  },
-  {
-    title: 'Couple Portrait',
-    src:
-      'https://images.unsplash.com/photo-1520975682031-e9b5f1d8b3a6?q=80&w=2069&auto=format&fit=crop',
-  },
-  {
-    title: 'Stage Decor',
-    src:
-      'https://images.unsplash.com/photo-1547887538-047f8148875d?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    title: 'Cultural Details',
+    title: 'Varmala (Jaimala) Exchange',
     src:
       'https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Pheras Around Agni',
+    src:
+      'https://images.unsplash.com/photo-1508186225823-0963cf9ab0de?q=80&w=2070&auto=format&fit=crop',
+  },
+  {
+    title: 'Bridal Entry',
+    src:
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2069&auto=format&fit=crop',
+  },
+  {
+    title: 'Vidai Farewell',
+    src:
+      'https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=2070&auto=format&fit=crop',
   },
 ]
 
